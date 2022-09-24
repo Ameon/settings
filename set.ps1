@@ -10,11 +10,18 @@ function Get-StartOldGo { & php -S oldgo.loc:52178 }
 function Get-Gpu { & git push }
 function Get-Gal { & git add .}
 function Get-SendMaster{ & ssh master 'cd /var/projects/go/www/go.ams74.ru && git pull origin php8.1'}
+function Get-SendDev{ & ssh master 'cd /var/projects/go/www/dev.go.ams74.ru && git pull origin php8.1'}
 function Get-Auto { 
   Get-GitAdd;
   Get-GitCommit;
   Get-Gpu;
   Get-SendMaster;
+}
+function Get-AutoDev{
+  Get-GitAdd;
+  Get-GitCommit;
+  Get-Gpu;
+  Get-SendDev;
 }
 
 
@@ -30,5 +37,5 @@ Set-Alias 'gs' Get-GitStatus
 Set-Alias 'oldgo' Get-StartOldGo
 Set-Alias 'pma' Get-StartPhpMyadmin
 Set-Alias 'a' Get-Auto
-
+Set-Alias 'adev' Get-AutoDev
 
