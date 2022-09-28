@@ -23,19 +23,30 @@ function Get-AutoDev{
   Get-Gpu;
   Get-SendDev;
 }
+function Get-Push{
+  Get-GitAdd;
+  Get-GitCommit;
+  Get-Gpu;
+}
+function Get-Start {
+  & npm run start
+}
 
 
+Set-Alias 'a' Get-Auto
+Set-Alias 'adev' Get-AutoDev
 Set-Alias 'c' cls
 Set-Alias 'eba' Get-EditAliases
 Set-Alias 'g' Get-GitInit
-Set-Alias 'gpu' Get-Gpu
-Set-Alias 'gcmt' Get-GitCommit
 Set-Alias 'ga' Get-GitAdd
+Set-Alias 'gcmt' Get-GitCommit
 Set-Alias 'gol' Get-StartGoLoc
 Set-Alias 'gou' Get-StartGoUpdate
+Set-Alias 'gpu' Get-Gpu
 Set-Alias 'gs' Get-GitStatus
 Set-Alias 'oldgo' Get-StartOldGo
 Set-Alias 'pma' Get-StartPhpMyadmin
-Set-Alias 'a' Get-Auto
-Set-Alias 'adev' Get-AutoDev
+Set-Alias 'push' Get-Push
+Set-Alias 's' Get-Start
+
 
