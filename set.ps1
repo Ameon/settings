@@ -15,9 +15,11 @@ function Get-SendDev{ & ssh master 'cd /var/projects/go/www/dev.go.ams74.ru && g
 function Get-Auto { Get-GitAdd; Get-GitCommit; Get-Gpu; Get-SendMaster; }
 function Get-AutoDev{ Get-GitAdd; Get-GitCommit; Get-Gpu; Get-SendDev; }
 function Get-Proj { set-location "C:/proj" }
+function Get-Pull { & git pull }
 function Get-Push{ Get-GitAdd; Get-GitCommit; Get-Gpu; }
 function Get-Start { & npm run start }
 function Get-StartWatch { & npm run start:watch }
+function Get-StartDev { & yarn start:dev }
 
 Set-Alias 'a' Get-Auto
 Set-Alias 'adev' Get-AutoDev
@@ -32,10 +34,13 @@ Set-Alias 'gou' Get-StartGoUpdate
 Set-Alias 'gpu' Get-Gpu
 Set-Alias 'gs' Get-GitStatus
 Set-Alias 'oldgo' Get-StartOldGo
+Set-Alias 'p' Get-Push
+Set-Alias 'pl' Get-Pull
 Set-Alias 'pma' Get-StartPhpMyadmin
 Set-Alias 'proj' Get-Proj
 Set-Alias 'push' Get-Push
 Set-Alias 's' Get-Start
 Set-Alias 'sw' Get-StartWatch
+Set-Alias 'sd' Get-StartDev
 
 
