@@ -28,6 +28,7 @@ function Get-Start { & npm run start }
 function Get-StartWatch { & npm run start:watch }
 function Get-StartDev { & yarn start:dev }
 function Get-GitDist { & git subtree split --branch dist --prefix dist/ }
+function Get-Yarn { & yarn }
 
 Set-Alias 'a' Get-Auto
 Set-Alias 'adev' Get-AutoDev
@@ -57,3 +58,4 @@ Set-Alias 'push2' Get-Push2
 Set-Alias 's' Get-Start
 Set-Alias 'sd' Get-StartDev
 Set-Alias 'sw' Get-StartWatch
+Set-Alias 'y' Get-Yarn
