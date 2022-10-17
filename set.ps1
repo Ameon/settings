@@ -1,8 +1,12 @@
 function Get-GitStatus { & git status $args }
 function Get-GitAdd { & git add .} 
 function Get-EditAliases { & code $profile }
+function Get-Build { & npm run build:prod }
 function Get-GitInit { & git init $args }
-function Get-GitCommit { & git commit -m "update"}
+function Get-Gpu { & git push }
+function Get-GitBranch { & git branch $args}
+function Get-GitCheckout { & git checkout $args}
+function Get-GitCommit { & git commit -m 'update' }
 function Get-GitCommitFix { & git commit -m "fix: update"}
 function Get-StartPhpMyadmin { & php -S pma.loc:52175 }
 function Get-StartGoLoc { & php -S go.loc:52176 }
@@ -22,14 +26,19 @@ function Get-Push2{ Get-GitAdd; Get-GitCommitFix; Get-Gpu;}
 function Get-Start { & npm run start }
 function Get-StartWatch { & npm run start:watch }
 function Get-StartDev { & yarn start:dev }
+function Get-GitDist { & git subtree split --branch dist --prefix dist/ }
 
 Set-Alias 'a' Get-Auto
 Set-Alias 'adev' Get-AutoDev
+Set-Alias 'b' Get-Build
 Set-Alias 'c' cls
+Set-Alias 'ch' Get-GitCheckout
 Set-Alias 'docs' Get-Docs
+Set-Alias 'dist' Get-GitDist
 Set-Alias 'eba' Get-EditAliases
 Set-Alias 'g' Get-GitInit
 Set-Alias 'ga' Get-GitAdd
+Set-Alias 'gb' Get-GitBranch
 Set-Alias 'gcmt' Get-GitCommit
 Set-Alias 'gol' Get-StartGoLoc
 Set-Alias 'gou' Get-StartGoUpdate
