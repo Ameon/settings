@@ -3,18 +3,19 @@ function Get-GitAdd { & git add .}
 function Get-EditAliases { & code $profile }
 function Get-Build { & npm run build:prod }
 function Get-GitInit { & git init $args }
+function Get-Gps { & git init $args }
 function Get-Gpu { & git push }
 function Get-GitBranch { & git branch $args}
 function Get-GitCheckout { & git checkout $args}
 function Get-GitCommit { & git commit -m 'update' }
 function Get-GitCommitFix { & git commit -m "fix: update"}
+function Get-GoPma { & code c:/proj/phpmyadmin }
 function Get-NpmInstall { & npm install }
 function Get-StartPhpMyadmin { & php -S pma.loc:52175 }
 function Get-StartGoLoc { & php -S go.loc:52176 }
 function Get-StartGoUpdate { & php -S go.update:52177 }
 function Get-Docs { & npm run docs}
 function Get-StartOldGo { & php -S oldgo.loc:52178 }
-function Get-Gpu { & git push }
 function Get-Gal { & git add .}
 function Get-SendMaster{ & ssh master 'cd /var/projects/go/www/go.ams74.ru && git pull origin php8.1'}
 function Get-SendDev{ & ssh master 'cd /var/projects/go/www/dev.go.ams74.ru && git pull origin php8.1'}
@@ -29,6 +30,7 @@ function Get-StartWatch { & npm run start:watch }
 function Get-StartDev { & yarn start:dev }
 function Get-GitDist { & git subtree split --branch dist --prefix dist/ }
 function Get-Yarn { & yarn }
+function Get-NpmRunStart { & npm run start}
 
 Set-Alias 'a' Get-Auto
 Set-Alias 'adev' Get-AutoDev
@@ -42,11 +44,14 @@ Set-Alias 'g' Get-GitInit
 Set-Alias 'ga' Get-GitAdd
 Set-Alias 'gb' Get-GitBranch
 Set-Alias 'gcmt' Get-GitCommit
+Set-Alias 'gopma' Get-GoPma
 Set-Alias 'gol' Get-StartGoLoc
 Set-Alias 'gou' Get-StartGoUpdate
 Set-Alias 'gpu' Get-Gpu
 Set-Alias 'gs' Get-GitStatus
 Set-Alias 'i' Get-NpmInstall
+Set-Alias 'master' Get-Master
+Set-Alias 'nrs' Get-NpmRunStart
 Set-Alias 'oldgo' Get-StartOldGo
 Set-Alias 'p' Get-Push
 Set-Alias 'p2' Get-Push2
