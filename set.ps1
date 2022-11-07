@@ -10,6 +10,7 @@ function Get-GitCheckout { & git checkout $args}
 function Get-GitCommit { & git commit -m 'update' }
 function Get-GitCommitFix { & git commit -m "fix: update"}
 function Get-GoPma { & code c:/proj/phpmyadmin }
+function Get-Homj { & php -S homj.loc:52191 }
 function Get-NpmInstall { & npm install }
 function Get-StartPhpMyadmin { & php -S pma.loc:52175 }
 function Get-StartGoLoc { & php -S go.loc:52176 }
@@ -49,6 +50,7 @@ Set-Alias 'gol' Get-StartGoLoc
 Set-Alias 'gou' Get-StartGoUpdate
 Set-Alias 'gpu' Get-Gpu
 Set-Alias 'gs' Get-GitStatus
+Set-Alias 'homj' Get-Homj
 Set-Alias 'i' Get-NpmInstall
 Set-Alias 'master' Get-Master
 Set-Alias 'nrs' Get-NpmRunStart
