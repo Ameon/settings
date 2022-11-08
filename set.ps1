@@ -19,6 +19,7 @@ function Get-PushUOriginMaster { & git push -u origin master }
 # Git - Работа с ветками
 
 function Get-GitBranch { & git branch $args}
+function Get-CheckoutMaster { & git checkout master}
 
 # Работа с алиасами
 
@@ -41,18 +42,23 @@ function Get-StartWatch { & npm run start:watch }
 
 
 # Проекты
+function Get-StartOldGo { & php -S oldgo.loc:52178 }
 function Get-StartPhpMyadmin { & php -S pma.loc:52175 }
 function Get-StartGoLoc { & php -S go.loc:52176 }
 function Get-StartGoUpdate { & php -S go.update:52177 }
 function Get-Homj { & php -S homj.loc:52191 }
-
+function Update-Project{
+  if($args[0] = 'docs'){
+    Get-Push;ssh zvt 'cd /var/proj/docs.mse.su && git pull'
+  }
+}
 
 
 # Yarn
 function Get-Yarn { & yarn }
 function Get-StartDev { & yarn start:dev }
 
-function Get-StartOldGo { & php -S oldgo.loc:52178 }
+
 
 # go.ams74.ru
 function Get-Master { ssh master }
@@ -96,18 +102,9 @@ Set-Alias 'c' cls
 # Работа с алиасами
 Set-Alias 'eba' Get-EditAliases
 
-
-
-Set-Alias 'gopma' Get-GoPma
-Set-Alias 'gol' Get-StartGoLoc
-Set-Alias 'gou' Get-StartGoUpdate
-
-
-Set-Alias 'homj' Get-Homj
-
 Set-Alias 'master' Get-Master
 
-Set-Alias 'oldgo' Get-StartOldGo
+
 
 Set-Alias 'pma' Get-StartPhpMyadmin
 Set-Alias 'proj' Get-Proj
@@ -128,8 +125,9 @@ Set-Alias 'puom' Get-PushUOriginMaster
 
 # Git - Работа с ветками 
 
-Set-Alias 'gb' Get-GitBranch      # git branch $args
-Set-Alias 'ch' Get-GitCheckout
+Set-Alias 'gb' Get-GitBranch        # git branch $args
+Set-Alias 'ch' Get-GitCheckout      # git checkout $args
+Set-Alias 'm' Get-CheckoutMaster    # git checkout master
 
 
 # Npm
@@ -144,3 +142,12 @@ Set-Alias 'b' Get-Build           # npm run build:prod
 
 Set-Alias 'y' Get-Yarn          # yarn
 Set-Alias 'sd' Get-StartDev     # yarn start:dev
+
+# Проекты
+
+Set-Alias 'u' Update-Project
+Set-Alias 'homj' Get-Homj
+Set-Alias 'oldgo' Get-StartOldGo
+Set-Alias 'gopma' Get-GoPma
+Set-Alias 'gol' Get-StartGoLoc
+Set-Alias 'gou' Get-StartGoUpdate
