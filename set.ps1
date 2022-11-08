@@ -118,7 +118,7 @@ Set-Alias 'ga' Get-GitAdd                 # git add .
 Set-Alias 'gcmt' Get-GitCommit            # git commit -m "Update"
 Set-Alias 'gs' Get-GitStatus              # git status
 Set-Alias 'gpu' Get-Gpu                   # git push
-Set-Alias 'p' Get-Push      
+Set-Alias 'p' Get-Push                    # ga gcmt p
 Set-Alias 'p2' Get-Push2
 Set-Alias 'pl' Get-Pull                   # git pull
 Set-Alias 'puom' Get-PushUOriginMaster
