@@ -49,7 +49,7 @@ function Get-StartGoUpdate { & php -S go.update:52177 }
 function Get-Homj { & php -S homj.loc:52191 }
 function Update-Project{
   if($args[0] = 'docs'){
-    Get-Push;ssh zvt 'cd /var/proj/docs.mse.su && git pull'
+    Get-Push;ssh ztv 'cd /var/proj/docs.mse.su && git pull'
   }
 }
 
@@ -61,7 +61,7 @@ function Get-StartDev { & yarn start:dev }
 
 
 # go.ams74.ru
-function Get-Master { ssh master }
+
 function Get-SendMaster{ & ssh master 'cd /var/projects/go/www/go.ams74.ru && git pull origin php8.1'}
 function Get-Auto { Get-GitAdd; Get-GitCommit; Get-Gpu; Get-SendMaster; }
 
@@ -72,11 +72,13 @@ function Get-AutoDev{ Get-GitAdd; Get-GitCommit; Get-Gpu; Get-SendDev; }
 # Nestjs.ru
 function Get-Docs { & npm run docs}
 
+# Работа с терминалом
 
 function Get-Proj { set-location "C:/proj" }
-
-
-
+function Get-Master { ssh master }
+function Get-React { ssh react }
+function Get-ZTV { ssh ztv}
+function Get-Config { & code c:/users/ameon/.ssh/config}
 
 
 
@@ -87,7 +89,7 @@ Set-Alias 'docs' Get-Docs       # npm run docs
 
 # go.ams74.ru
 Set-Alias 'a' Get-Auto            # Автопуш в master
-Set-Alias 'master' Get-Master     # ssh master
+
 
 # dev.go.ams74.ru
 Set-Alias 'adev' Get-AutoDev
@@ -97,7 +99,11 @@ Set-Alias 'adev' Get-AutoDev
 # Работа с терминалом
 
 Set-Alias 'c' cls
-
+Set-Alias 'home' Get-Home
+Set-Alias 'master' Get-Master     # ssh master
+Set-Alias 'react' Get-React       # ssh react
+Set-Alias 'ztv' Get-ZTV           # ssh ztv
+Set-Alias 'config' Get-Config
 
 # Работа с алиасами
 Set-Alias 'eba' Get-EditAliases
@@ -121,7 +127,7 @@ Set-Alias 'gpu' Get-Gpu                   # git push
 Set-Alias 'p' Get-Push                    # ga gcmt p
 Set-Alias 'p2' Get-Push2
 Set-Alias 'pl' Get-Pull                   # git pull
-Set-Alias 'puom' Get-PushUOriginMaster
+Set-Alias 'puom' Get-PushUOriginMaster    # git push -u origin master
 
 # Git - Работа с ветками 
 
