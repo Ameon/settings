@@ -78,6 +78,7 @@ function Update-Project{
     ssh ztv 'cd /var/proj/mse.su && git pull'
   }
 }
+
 function Get-OpenProject {
   if($args[0] -eq 'api'){
     code c:/proj/api.go.ams74.ru
