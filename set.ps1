@@ -1,11 +1,28 @@
 # Git
 
+function Get-GitFullInit {
+  $v = $args[0];
+  git init;
+  git add .;
+  git commit -m 'init';
+  git remote add origin git@github.com:Ameon/$v.git
+  git push -u origin master;
+}
+
 function Get-GitStatus { & git status $args }
 
 function Get-GitInit { & git init $args }
 function Get-GitAdd { & git add .}
 function Get-GitCommit { & git commit -m 'update' }
 function Get-Gpu { & git push }
+
+function Get-GitRemote {
+  if(!$args[0]){
+    & git remote -v
+  }else{
+    & git remote $args
+  }
+}
 
 function Get-GitCommitFix { & git commit -m "fix: update"}
 
@@ -42,6 +59,7 @@ function Get-StartWatch { & npm run start:watch }
 
 
 # Проекты
+
 function Get-StartOldGo { & php -S oldgo.loc:52178 }
 function Get-StartPhpMyadmin { & php -S pma.loc:52175 }
 function Get-StartGoLoc { & php -S go.loc:52176 }
@@ -51,7 +69,28 @@ function Update-Project{
   if($args[0] -eq 'docs'){
     Get-Push;ssh ztv 'cd /var/proj/docs.mse.su && git pull'
   }elseif($args[0] -eq 'api'){
-    Get-Push;ssh react 'cd /var/projects/crm/api_ameon && git pull'
+    Get-YarnBuild;
+    Get-Push;
+    ssh react 'cd /var/projects/crm/api_ameon && git pull && systemctl restart api_ameon'
+  }
+  elseif($args[0] -eq 'mse'){
+    Get-Push;
+    ssh ztv 'cd /var/proj/mse.su && git pull'
+  }
+}
+function Get-OpenProject {
+  if($args[0] -eq 'api'){
+    code c:/proj/api.go.ams74.ru
+  }elseif($args[0] -eq 'docs'){
+    code c:/proj/web/docs.mse.su
+  }elseif($args[0] -eq 'nest-api'){
+    code c:/proj/web/nest-api
+  }elseif($args[0] -eq 'all'){
+    & code c:/proj/settings;
+    & code c:/proj/phpmyadmin;
+    code c:/proj/web/docs.mse.su;
+    code c:/proj/web/nest-api;
+    code c:/proj/api.go.ams74.ru
   }
 }
 
@@ -59,6 +98,7 @@ function Update-Project{
 # Yarn
 function Get-Yarn { & yarn }
 function Get-StartDev { & yarn start:dev }
+function Get-YarnBuild { yarn build }
 
 
 
@@ -121,9 +161,11 @@ Set-Alias 'push2' Get-Push2
 
 # Git
 
+Set-Alias 'init' Get-GitFullInit          # Полная инициализация репо
 Set-Alias 'g' Get-GitInit                 # git init $args
 Set-Alias 'ga' Get-GitAdd                 # git add .
 Set-Alias 'gcmt' Get-GitCommit            # git commit -m "Update"
+Set-Alias 'gr' Get-GitRemote              # git remote -v
 Set-Alias 'gs' Get-GitStatus              # git status
 Set-Alias 'gpu' Get-Gpu                   # git push
 Set-Alias 'p' Get-Push                    # ga gcmt p
@@ -150,10 +192,13 @@ Set-Alias 'b' Get-Build           # npm run build:prod
 
 Set-Alias 'y' Get-Yarn          # yarn
 Set-Alias 'sd' Get-StartDev     # yarn start:dev
+Set-Alias 'yb' Get-YarnBuild    # yarn build
 
 # Проекты
 
-Set-Alias 'u' Update-Project
+Set-Alias 'u' Update-Project      # Обновить проект ...
+Set-Alias 'o' Get-OpenProject     # Открыть проект ...
+
 Set-Alias 'homj' Get-Homj
 Set-Alias 'oldgo' Get-StartOldGo
 Set-Alias 'gopma' Get-GoPma
