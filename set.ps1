@@ -48,8 +48,10 @@ function Get-StartGoLoc { & php -S go.loc:52176 }
 function Get-StartGoUpdate { & php -S go.update:52177 }
 function Get-Homj { & php -S homj.loc:52191 }
 function Update-Project{
-  if($args[0] = 'docs'){
+  if($args[0] -eq 'docs'){
     Get-Push;ssh ztv 'cd /var/proj/docs.mse.su && git pull'
+  }elseif($args[0] -eq 'api'){
+    Get-Push;ssh react 'cd /var/projects/crm/api_ameon && git pull'
   }
 }
 
