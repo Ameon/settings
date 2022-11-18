@@ -88,10 +88,11 @@ function Get-OpenProject {
     code c:/proj/web/nest-api
   }elseif($args[0] -eq 'all'){
     & code c:/proj/settings;
-    & code c:/proj/phpmyadmin;
+    code c:/proj/phpmyadmin;
     code c:/proj/web/docs.mse.su;
     code c:/proj/web/nest-api;
     code c:/proj/api.go.ams74.ru
+    code c:/proj/web/go.update;
   }
 }
 
