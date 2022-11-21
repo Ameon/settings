@@ -115,6 +115,7 @@ function Get-AutoDev{ Get-GitAdd; Get-GitCommit; Get-Gpu; Get-SendDev; }
 
 # Nestjs.ru
 function Get-Docs { & npm run docs}
+function Get-GitDist { & git subtree split --branch dist --prefix dist/ }
 
 # Работа с терминалом
 
