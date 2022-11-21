@@ -96,6 +96,7 @@ function Get-OpenProject {
   }
 }
 
+function Get-Web { set-location "C:/proj/web" }
 
 # Yarn
 function Get-Yarn { & yarn }
@@ -146,9 +147,11 @@ Set-Alias 'adev' Get-AutoDev
 Set-Alias 'c' cls
 Set-Alias 'home' Get-Home
 Set-Alias 'master' Get-Master     # ssh master
+Set-Alias 'proj' Get-Proj
 Set-Alias 'react' Get-React       # ssh react
 Set-Alias 'ztv' Get-ZTV           # ssh ztv
 Set-Alias 'config' Get-Config
+Set-Alias 'web' Get-Web
 
 # Работа с алиасами
 Set-Alias 'eba' Get-EditAliases
@@ -158,7 +161,7 @@ Set-Alias 'master' Get-Master
 
 
 Set-Alias 'pma' Get-StartPhpMyadmin
-Set-Alias 'proj' Get-Proj
+
 Set-Alias 'push' Get-Push
 Set-Alias 'push2' Get-Push2
 
