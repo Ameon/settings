@@ -76,6 +76,15 @@ function Update-Project{
   elseif($args[0] -eq 'mse'){
     Get-Push;
     ssh ztv 'cd /var/proj/mse.su && git pull'
+  }elseif($args[0] -eq 'nestjs'){
+    Get-Docs;
+    Get-Build;
+    Get-Push2;
+    Get-GitDist;
+    ch dist;
+    git push;
+    ch master;
+    ssh ameon 'cd ~/domains/nestjs.ru && git pull'
   }
 }
 
@@ -114,6 +123,7 @@ function Get-SendDev{ & ssh master 'cd /var/projects/go/www/dev.go.ams74.ru && g
 function Get-AutoDev{ Get-GitAdd; Get-GitCommit; Get-Gpu; Get-SendDev; }
 
 # Nestjs.ru
+
 function Get-Docs { & npm run docs}
 function Get-GitDist { & git subtree split --branch dist --prefix dist/ }
 
