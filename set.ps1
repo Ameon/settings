@@ -78,6 +78,8 @@ function Update-Project{
     Get-Push;
     ssh ztv 'cd /var/proj/mse.su && git pull'
   }elseif($args[0] -eq 'nestjs'){
+    Get-Push;ssh ztv 'cd /var/proj/nestjs.mse.su && git pull'
+  }elseif($args[0] -eq 'nestjs.ru'){
     Get-Docs;
     Get-Build;
     Get-Push2;
