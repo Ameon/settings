@@ -105,7 +105,11 @@ function Get-OpenProject {
     code c:/proj/web/nest-api;
     code c:/proj/api.go.ams74.ru
     code c:/proj/web/go.update;
+  }elseif($args[0] -eq 'set'){
+    code c:/proj/settings;
   }
+
+  
 }
 
 function Get-Web { set-location "C:/proj/web" }
@@ -138,7 +142,10 @@ function Get-Master { ssh master }
 function Get-React { ssh react }
 function Get-ZTV { ssh ztv}
 function Get-Config { & code c:/users/ameon/.ssh/config}
-
+function ssh-copy-id([string]$sshHost)
+{
+    cat ~/.ssh/id_rsa.pub | ssh "$sshHost" "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
+}
 
 
 
