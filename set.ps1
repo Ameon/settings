@@ -138,6 +138,17 @@ function Get-GitDist { & git subtree split --branch dist --prefix dist/ }
 # Работа с терминалом
 
 function Get-Proj { set-location "C:/proj" }
+function Get-Go { 
+  if($args[0] -eq 'proj'){
+    set-location "C:/proj" 
+  }elseif($args[0] -eq 'ssh'){
+    set-location "~/.ssh" 
+  }elseif($args[0] -eq 'docker'){
+    set-location "C:/docker"
+  }
+
+}
+function Get-La { ls | ft -p name}
 function Get-Master { ssh master }
 function Get-React { ssh react }
 function Get-ZTV { ssh ztv}
@@ -165,6 +176,7 @@ Set-Alias 'adev' Get-AutoDev
 # Работа с терминалом
 
 Set-Alias 'c' cls
+Set-Alias 'la' Get-La
 Set-Alias 'home' Get-Home
 Set-Alias 'master' Get-Master     # ssh master
 Set-Alias 'proj' Get-Proj
@@ -172,11 +184,13 @@ Set-Alias 'react' Get-React       # ssh react
 Set-Alias 'ztv' Get-ZTV           # ssh ztv
 Set-Alias 'config' Get-Config
 Set-Alias 'web' Get-Web
+Set-Alias 'go' Get-Go             # Открыть папку   
 
 # Работа с алиасами
+
 Set-Alias 'eba' Get-EditAliases
 
-Set-Alias 'master' Get-Master
+
 
 
 
