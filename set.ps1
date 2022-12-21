@@ -1,3 +1,8 @@
+# 0. Самоопределение
+
+  function Get-Whome{
+    "К"
+  }
 # Git
 
 function Get-GitFullInit {
@@ -137,6 +142,12 @@ function Get-GitDist { & git subtree split --branch dist --prefix dist/ }
 
 # Работа с терминалом
 
+function Get-EditFile {
+  if($args[0] -eq 'config'){
+    code $env:userprofile/.ssh/config
+  }
+}
+
 function Get-Proj { set-location "C:/proj" }
 function Get-Go { 
   if($args[0] -eq 'proj'){
@@ -153,10 +164,30 @@ function Get-Master { ssh master }
 function Get-React { ssh react }
 function Get-ZTV { ssh ztv}
 function Get-Config { & code c:/users/ameon/.ssh/config}
-function ssh-copy-id([string]$sshHost)
+function ssh_copy_id([string]$sshHost)
 {
     cat ~/.ssh/id_rsa.pub | ssh "$sshHost" "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
 }
+
+# 7. SSH
+
+  # 7.1 - Работа с ssh ключами
+  
+    function Get-ShowKey {
+      cat ~/.ssh/id_rsa.pub
+    }
+
+    function Get-Key {
+      $res = cat ~/.ssh/id_rsa.pub
+      Set-Clipboard $res
+    }
+
+  # SSH ключи
+
+    function Get-Big {
+      ssh big 
+    }
+
 
 
 
@@ -173,18 +204,31 @@ Set-Alias 'adev' Get-AutoDev
 
 
 
-# Работа с терминалом
+# 6. Работа с терминалом
 
-Set-Alias 'c' cls
-Set-Alias 'la' Get-La
-Set-Alias 'home' Get-Home
-Set-Alias 'master' Get-Master     # ssh master
-Set-Alias 'proj' Get-Proj
-Set-Alias 'react' Get-React       # ssh react
-Set-Alias 'ztv' Get-ZTV           # ssh ztv
-Set-Alias 'config' Get-Config
-Set-Alias 'web' Get-Web
-Set-Alias 'go' Get-Go             # Открыть папку   
+  Set-Alias 'c' cls
+  Set-Alias 'e' Get-EditFile        # Открыть файл для редактирования
+  Set-Alias 'la' Get-La
+  Set-Alias 'home' Get-Home
+  Set-Alias 'master' Get-Master     # ssh master
+  Set-Alias 'proj' Get-Proj
+  Set-Alias 'react' Get-React       # ssh react
+  Set-Alias 'ztv' Get-ZTV           # ssh ztv
+  Set-Alias 'config' Get-Config
+  Set-Alias 'web' Get-Web
+  Set-Alias 'go' Get-Go             # Перейти в папку  
+
+# 7. SSH
+
+  # 7.1 - Работа с ssh ключами
+
+    Set-Alias 'key' Get-ShowKey
+    Set-Alias 'getkey' Get-Key
+
+  # 7.2 - SSH ключи
+  
+    Set-Alias 'big' Get-Big
+
 
 # Работа с алиасами
 
