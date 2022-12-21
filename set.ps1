@@ -3,45 +3,47 @@
   function Get-Whome{
     "К"
   }
-# Git
 
-function Get-GitFullInit {
-  $v = $args[0];
-  git init;
-  git add .;
-  git commit -m 'init';
-  git remote add origin git@github.com:Ameon/$v.git
-  git push -u origin master;
-}
+# 1. Git
 
-function Get-GitStatus { & git status $args }
-
-function Get-GitInit { & git init $args }
-function Get-GitAdd { & git add .}
-function Get-GitCommit { & git commit -m 'update' }
-function Get-Gpu { & git push }
-
-function Get-GitRemote {
-  if(!$args[0]){
-    & git remote -v
-  }else{
-    & git remote $args
+  function Get-GitFullInit {
+    $v = $args[0];
+    git init;
+    git add .;
+    git commit -m 'init';
+    git remote add origin git@github.com:Ameon/$v.git
+    git push -u origin master;
   }
-}
 
-function Get-GitCommitFix { & git commit -m "fix: update"}
+  function Get-GitStatus { & git status $args }
 
-function Get-Pull { & git pull }
+  function Get-GitInit { & git init $args }
+  function Get-GitAdd { & git add .}
+  function Get-GitCommit { & git commit -m 'update' }
+  function Get-Gpu { & git push }
 
-# Git - Объединенные команды
-function Get-Push{ Get-GitAdd; Get-GitCommit; Get-Gpu; }
-function Get-Push2{ Get-GitAdd; Get-GitCommitFix; Get-Gpu;}
-function Get-PushUOriginMaster { & git push -u origin master }
+  function Get-GitRemote {
+    if(!$args[0]){
+      & git remote -v
+    }else{
+      & git remote $args
+    }
+  }
 
-# Git - Работа с ветками
+  function Get-GitCommitFix { & git commit -m "fix: update"}
 
-function Get-GitBranch { & git branch $args}
-function Get-CheckoutMaster { & git checkout master}
+  function Get-Pull { & git pull }
+
+  # Git - Объединенные команды
+
+    function Get-Push{ Get-GitAdd; Get-GitCommit; Get-Gpu; }
+    function Get-Push2{ Get-GitAdd; Get-GitCommitFix; Get-Gpu;}
+    function Get-PushUOriginMaster { & git push -u origin master }
+
+  # Git - Работа с ветками
+
+  function Get-GitBranch { & git branch $args}
+  function Get-CheckoutMaster { & git checkout master}
 
 # Работа с алиасами
 
@@ -188,6 +190,14 @@ function ssh_copy_id([string]$sshHost)
       ssh big 
     }
 
+# 8. Работа с алиасами
+
+  function Get-UpdateAliases {
+    set-location "C:/proj/settings";
+    p;
+  }
+
+
 
 
 
@@ -230,10 +240,10 @@ Set-Alias 'adev' Get-AutoDev
     Set-Alias 'big' Get-Big
 
 
-# Работа с алиасами
+# 8. Работа с алиасами
 
 Set-Alias 'eba' Get-EditAliases
-
+Set-Alias 'ud' Get-UpdateAliases
 
 
 
