@@ -3,15 +3,17 @@
   function Get-Whome{
     "К"
   }
+  
 # Git
+
 
 function Get-GitFullInit {
   $v = $args[0];
-  git init;
-  git add .;
-  git commit -m 'init';
-  git remote add origin git@github.com:Ameon/$v.git
-  git push -u origin master;
+  git init;                                             # Инициализация
+  git add .;                                            # Добавляем все в индекс
+  git commit -m 'init';                                 # Коммит Инициализации
+  git remote add origin git@github.com:Ameon/$v.git     # Привязка Репозитория
+  git push -u origin master;                            # Привязка ветки Master
 }
 
 function Get-GitStatus { & git status $args }
@@ -112,6 +114,8 @@ function Get-OpenProject {
     code c:/proj/web/go.update;
   }elseif($args[0] -eq 'set'){
     code c:/proj/settings;
+  }elseif($args[0] -eq 'ssh'){
+    code c:/users/ameon/.ssh;
   }
 
   
