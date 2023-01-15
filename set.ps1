@@ -55,9 +55,8 @@
     # 1.1.2 - Добавление нового комита 
 
       function Get-GitCommit { 
-        & git commit -m 'update';
-        # if($args[0]){ & git commit -m 'update'; }
-        # else { & git commit -m $args; }
+        if($args[0]){ & git commit -m 'update';}
+        else { & git commit -m $args; }
       }
       Set-Alias 'gcmt' Get-GitCommit
 
