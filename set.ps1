@@ -91,7 +91,7 @@
 
   # Git - Объединенные команды
 
-    function Get-Push{ Get-GitAdd; Get-GitCommit; Get-Gpu; }
+    function Get-Push { Get-GitAdd; Get-GitCommit; Get-Gpu; }
     function Get-Push2{ Get-GitAdd; Get-GitCommitFix; Get-Gpu;}
     function Get-PushUOriginMaster { & git push -u origin master }
 
