@@ -55,8 +55,8 @@
     # 1.1.2 - Добавление нового комита 
 
       function Get-GitCommit { 
-        if($args[0]){ git commit -m 'update' }
-        else { git commit -m $args }
+        if($args[0]){ & git commit -m 'update'; }
+        else { & git commit -m $args; }
       }
       Set-Alias 'gcmt' Get-GitCommit
 
@@ -75,7 +75,7 @@
   
   
   
-  function Get-Gpu { & git push }
+  function Get-Gpu { & git push; }
 
   function Get-GitRemote {
     if(!$args[0]){
