@@ -57,6 +57,7 @@
       function Get-GitCommit { 
         if($args[0]){ & git commit -m 'update';}
         else { & git commit -m $args; }
+        # else { & git commit -m $args; }
       }
       Set-Alias 'gcmt' Get-GitCommit
 
@@ -91,7 +92,7 @@
 
   # Git - Объединенные команды
 
-    function Get-Push { Get-GitAdd; Get-GitCommit; Get-Gpu; }
+    function Get-Push { Get-GitAdd; & git commit -m 'update'; Get-Gpu; }
     function Get-Push2{ Get-GitAdd; Get-GitCommitFix; Get-Gpu;}
     function Get-PushUOriginMaster { & git push -u origin master }
 
