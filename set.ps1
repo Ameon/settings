@@ -168,6 +168,7 @@ function Get-Go {
 }
 function Get-La { ls | ft -p name}
 function Get-Master { ssh master }
+function Get-Dev { ssh dev }
 function Get-React { ssh react }
 function Get-ZTV { ssh ztv}
 function Get-Config { & code c:/users/ameon/.ssh/config}
@@ -226,6 +227,7 @@ Set-Alias 'adev' Get-AutoDev
   Set-Alias 'la' Get-La
   Set-Alias 'home' Get-Home
   Set-Alias 'master' Get-Master     # ssh master
+  Set-Alias 'dev' Get-Dev           # ssh dev
   Set-Alias 'proj' Get-Proj
   Set-Alias 'react' Get-React       # ssh react
   Set-Alias 'ztv' Get-ZTV           # ssh ztv
