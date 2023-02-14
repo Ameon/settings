@@ -236,7 +236,7 @@ function ssh_copy_id([string]$sshHost)
 
   # 6.4 - Перейти в домашнюю папку пользователя
 
-    Set-Alias 'home' Get-Home
+  Set-Alias 'home' Get-Home
   Set-Alias 'master' Get-Master     # ssh master
   Set-Alias 'proj' Get-Proj
   Set-Alias 'react' Get-React       # ssh react
@@ -270,6 +270,11 @@ function ssh_copy_id([string]$sshHost)
 
       function Get-Dev { ssh dev }
       Set-Alias 'dev' Get-Dev
+
+    # 7.2.3 - Подключиться к vpn
+
+      function Get-Vpn { ssh vpn }
+      Set-Alias 'vpn' Get-Vpn
 
   # SSH ключи
 
