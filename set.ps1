@@ -204,7 +204,7 @@ function Get-Go {
 
 }
 
-function Get-Master { ssh master }
+
 function Get-Dev { ssh dev }
 function Get-React { ssh react }
 function Get-ZTV { ssh ztv}
@@ -238,7 +238,13 @@ function ssh_copy_id([string]$sshHost)
   # 6.4 - Перейти в домашнюю папку пользователя
 
     Set-Alias 'home' Get-Home
-  Set-Alias 'master' Get-Master     # ssh master
+    
+    function Get-Master { ssh master }
+    Set-Alias 'master' Get-Master     # ssh master
+
+    function Get-Vpn { ssh vpn }
+    Set-Alias 'vpn' Get-Vpn
+
   Set-Alias 'dev' Get-Dev           # ssh dev
   Set-Alias 'proj' Get-Proj
   Set-Alias 'react' Get-React       # ssh react
