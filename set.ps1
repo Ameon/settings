@@ -210,7 +210,7 @@ function Get-ZTV { ssh ztv}
 function Get-Config { & code c:/users/ameon/.ssh/config}
 function ssh_copy_id([string]$sshHost)
 {
-    cat ~/.ssh/id_rsa.pub | ssh "$sshHost" "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
+  cat ~/.ssh/id_ed25519.pub | ssh "$sshHost" "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys && sed -i 's/\r//g' ~/.ssh/authorized_keys"
 }
 
 # 6. Работа с терминалом
@@ -275,6 +275,29 @@ function ssh_copy_id([string]$sshHost)
 
       function Get-Vpn { ssh vpn }
       Set-Alias 'vpn' Get-Vpn
+
+    # 7.2.4 - Подключиться к vpn
+
+      function Get-Super { ssh super }
+      Set-Alias 'super' Get-Super
+    
+    # 7.2.4 - Подключиться к 1C
+
+      function Get-1c { ssh 1c }
+      Set-Alias '1c' Get-1c
+    
+    # 7.2.5 - Подключиться к 1C
+
+      function Get-DevNew { ssh dev_new }
+      Set-Alias 'dev_new' Get-DevNew
+
+    # 7.2.6 - Подключиться к 1C
+
+      function Get-Test1c { ssh test_1c }
+      Set-Alias 'test_1c' Get-Test1c
+
+      function Get-Max { ssh max }
+      Set-Alias 'max' Get-Max
 
   # SSH ключи
 
