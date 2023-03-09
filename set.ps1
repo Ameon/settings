@@ -1,3 +1,5 @@
+Import-Module ControlSshConfig
+
 # 0. Самоопределение            -- ктоя
 # 1. Git
 
@@ -33,6 +35,53 @@
     # 7.2.2 - Подключение к dev                   -- dev
 # 8. Проекты
 
+
+
+
+
+function Add-SSHServer {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $true, Position = 0, HelpMessage = 'The hostname or IP address of the SSH server')]
+        [Alias('s')]
+        [string]$Server,
+
+        [Parameter(Mandatory = $true, Position = 1, HelpMessage = 'The SSH username')]
+        [Alias('u')]
+        [string]$Username,
+
+        [Parameter(Mandatory = $true, Position = 2, HelpMessage = 'The SSH password')]
+        [Alias('p')]
+        [string]$Password,
+
+        [Parameter(Position = 3, HelpMessage = 'The SSH server port')]
+        [Alias('o')]
+        [int]$Port = 22
+    )
+
+    # Путь к конфигурационному файлу ssh
+    $config_file = "$env:USERPROFILE\.ssh\config"
+
+    # Проверяем наличие конфигурационного файла
+    if (!(Test-Path $config_file)) {
+        # Если файл не существует, создаем его
+        New-Item -ItemType File $config_file | Out-Null
+    }
+
+    # Формируем строку конфигурации для нового сервера
+    $config = @"
+Host $Server
+Hostname $Server
+User $Username
+Port $Port
+"@
+
+    # Добавляем новую конфигурацию в конец файла
+    Add-Content $config_file $config
+
+    # Сообщаем об успешном добавлении сервера
+    Write-Host "SSH сервер $Server добавлен в конфигурационный файл."
+}
 
 # 0. Самоопределение
   
@@ -256,8 +305,8 @@ function ssh_copy_id([string]$sshHost)
 
     # 7.1.2 - Скопировать ключ в буфер обмена
 
-      function Get-Key {$res = cat ~/.ssh/id_rsa.pub;Set-Clipboard $res}
-      Set-Alias 'getkey' Get-Key
+      # function Get-Key {$res = cat ~/.ssh/id_rsa.pub;Set-Clipboard $res}
+      # Set-Alias 'getkey' Get-Key
 
   # 7.2 - SSH ключи
 
@@ -424,3 +473,4 @@ function Get-OpenProject {
 
   
 }
+
