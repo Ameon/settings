@@ -1,3 +1,10 @@
+Import-Module ControlSshConfig
+Import-Module Git
+Import-Module GitBranches
+Import-Module Projects
+Import-Module Settings
+
+
 # 0. Самоопределение            -- ктоя
 # 1. Git
 
@@ -39,52 +46,20 @@
   function Get-WhoMe { Write-Host -ForegroundColor DarkGreen "Ты Михаил Гаврилюк, ты должен идти к цели!"}
   Set-Alias 'ктоя' Get-WhoMe
 
-# 1. Git
-  # 1.1 - Основый команды
+
+
     
-    # 1.1.1 - Инициализация репозитория
+
     
-      function Get-GitInit { & git init $args }
-      Set-Alias 'g' Get-GitInit
 
-    # 1.1.2 - Добавление в индекс (отслеживание)
 
-      function Get-GitAdd { & git add .}
-      Set-Alias 'ga' Get-GitAdd
-
-    # 1.1.2 - Добавление нового комита 
-
-      function Get-GitCommit { 
-        if($args[0]){ & git commit -m 'update';}
-        else { & git commit -m $args; }
-        # else { & git commit -m $args; }
-      }
-      Set-Alias 'gcmt' Get-GitCommit
-
-  # 1.1 - Новый репозиторий с комитом
-
-    function Get-GitFullInit {
-      $v = $args[0];g;ga;git commit -m 'init';git remote add origin git@github.com:Ameon/$v.git;git push -u origin master;
-    }
-    Set-Alias 'init' Get-GitFullInit
-
-  # 1.2 - Статус репозитория
-
-    function Get-GitStatus { & git status $args }
-    Set-Alias 'gs' Get-GitStatus
 
   
   
   
-  function Get-Gpu { & git push; }
+  
 
-  function Get-GitRemote {
-    if(!$args[0]){
-      & git remote -v
-    }else{
-      & git remote $args
-    }
-  }
+ 
 
   function Get-GitCommitFix { & git commit -m "fix: update"}
 
@@ -96,28 +71,11 @@
     function Get-Push2{ Get-GitAdd; Get-GitCommitFix; Get-Gpu;}
     function Get-PushUOriginMaster { & git push -u origin master }
 
-  # 1.4 Git - Работа с ветками 
 
-    # 1.4.1 - Список веток
-    
-      function Get-GitBranch { & git branch $args}
-      Set-Alias 'gb' Get-GitBranch
-
-    # 1.4.2 - Переключение между ветками
-
-      function Get-GitCheckout { & git checkout $args}
-      Set-Alias 'ch' Get-GitCheckout
-
-    # 1.4.3 - Переключюиться на ветку master            -- git checkout master
-
-      function Get-CheckoutMaster { & git checkout master}
-      Set-Alias 'm' Get-CheckoutMaster    # git checkout master
 
 # 2. Работа с алиасами
 
-  # 2.1 - Открытиые алиасов 
-    function Get-EditAliases { & code $profile }
-    Set-Alias 'eba' Get-EditAliases
+ 
 
   # 2.2 - Получаение алиасов
 
@@ -326,9 +284,9 @@ Set-Alias 'push2' Get-Push2
 
 
 
-Set-Alias 'gr' Get-GitRemote              # git remote -v
 
-Set-Alias 'gpu' Get-Gpu                   # git push
+
+
 Set-Alias 'p' Get-Push                    # ga gcmt p
 Set-Alias 'p2' Get-Push2
 Set-Alias 'pl' Get-Pull                   # git pull
@@ -339,10 +297,8 @@ Set-Alias 'puom' Get-PushUOriginMaster    # git push -u origin master
 
 
 
-# Проекты
 
-Set-Alias 'u' Update-Project      # Обновить проект ...
-Set-Alias 'o' Get-OpenProject     # Открыть проект ...
+
 
 Set-Alias 'homj' Get-Homj
 Set-Alias 'oldgo' Get-StartOldGo
@@ -364,43 +320,3 @@ Set-Alias 'adev' Get-AutoDev
 
 
 
-function Update-Project{
-  if($args[0] -eq 'docs'){
-    Get-Push;ssh ztv 'cd /var/proj/docs.mse.su && git pull'
-  }elseif($args[0] -eq 'api'){
-    Get-YarnBuild;
-    Get-Push;
-    ssh react 'cd /var/projects/crm/api_ameon && git pull && systemctl restart api_ameon'
-  }
-  elseif($args[0] -eq 'mse'){
-    Get-Push;
-    ssh ztv 'cd /var/proj/mse.su && git pull'
-  }elseif($args[0] -eq 'nestjs'){
-    Get-Push;ssh ztv 'cd /var/proj/nestjs.mse.su && git pull'
-  }elseif($args[0] -eq 'nestjs.ru'){
-    Get-Docs;Get-Build;Get-Push2;Get-GitDist;ch dist;Get-Push;ch master;ssh ameon 'cd ~/domains/nestjs.ru && git pull'
-  }
-}
-
-function Get-OpenProject {
-  if($args[0] -eq 'api'){
-    code c:/proj/api.go.ams74.ru
-  }elseif($args[0] -eq 'docs'){
-    code c:/proj/web/docs.mse.su
-  }elseif($args[0] -eq 'nest-api'){
-    code c:/proj/web/nest-api
-  }elseif($args[0] -eq 'all'){
-    & code c:/proj/settings;
-    code c:/proj/phpmyadmin;
-    code c:/proj/web/docs.mse.su;
-    code c:/proj/web/nest-api;
-    code c:/proj/api.go.ams74.ru
-    code c:/proj/web/go.update;
-  }elseif($args[0] -eq 'set'){
-    code c:/proj/settings;
-  }elseif($args[0] -eq 'ssh'){
-    code c:/users/ameon/.ssh;
-  }
-
-  
-}
