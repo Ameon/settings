@@ -1,6 +1,6 @@
 function Get-GitPull { & git pull $args }
 function Get-GitStatus { & git status $args }
-function Get-GitBranch{ & git branch $args }
+
 # Docker
 function cdt { set-location "C:/proj" }
 
@@ -34,11 +34,9 @@ Set-Alias go.loc 'cd /var/www/go.loc'
 #Set-Alias gps 'git push && master "cd /var/projects/go/www/go.ams74.ru && git pull origin php8.1"'
 
 # GIT
-Set-Alias ga 'git add .'
 Set-Alias gb Get-GitBranch
 #Set-Alias gc 'git commit -m "Update"'
 Set-Alias gpl Get-GitPull
-Set-Alias gs Get-GitStatus
 
 Set-Alias key 'cat ~/.ssh/id_rsa.pub'
 Set-Alias la 'ls -a1'

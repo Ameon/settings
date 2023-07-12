@@ -3,14 +3,9 @@ $OutputEncoding = [System.Text.Encoding]::UTF8
 
 Import-Module ControlSshConfig
 Import-Module ControlFolders
-Import-Module CSharp
 Import-Module Git
 Import-Module GitBranches
-Import-Module NPM
 Import-Module Projects
 Import-Module SshAliases
 Import-Module Settings
 Import-Module Terminal
-Import-Module ControlVirtualBox
-Import-Module PSMenu
-Import-Module Yarn
