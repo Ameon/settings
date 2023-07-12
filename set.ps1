@@ -1,8 +1,10 @@
 $PSDefaultParameterValues['Out-File:Encoding'] = 'UTF8'
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
-Import-Module ControlSshConfig
+Import-Module ControlAliases
+Import-Module ControlFiles
 Import-Module ControlFolders
+Import-Module ControlSshConfig
 Import-Module CSharp
 Import-Module Git
 Import-Module GitBranches
