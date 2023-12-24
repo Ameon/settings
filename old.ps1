@@ -1,86 +1,69 @@
 
 
-# 0.             -- 
+# 0. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½            -- ï¿½ï¿½ï¿½ï¿½
 # 1. Git
 
-  # 1.1  
+  # 1.1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    # 1.1.1 -        -- g
-    # 1.1.2 -    ()    -- ga
-    # 1.1.3 -                       -- gcmt $args           (gcmt, gcmt "New commit")
+    # 1.1.1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     -- g
+    # 1.1.2 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)    -- ga
+    # 1.1.3 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½                     -- gcmt $args           (gcmt, gcmt "New commit")
     
-  # 1.1 -                    -- init <_>
-  # 1.2 -                          -- gs
-  # 1.4 Git -   
-    # 1.4.1 -                            -- gb $args
-    # 1.4.2 -   ,           -- ch <>
-              #                          -- ch <>  <>
+  # 1.1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                 -- init <ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½>
+  # 1.2 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½                        -- gs
+  # 1.4 Git - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    # 1.4.1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½                          -- gb $args
+    # 1.4.2 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,           -- ch <ï¿½ï¿½ï¿½ï¿½ï¿½>
+              # ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½                        -- ch <ï¿½ï¿½ï¿½ï¿½> ï¿½ï¿½ï¿½ <ï¿½ï¿½ï¿½ï¿½ï¿½>
 
-# 2.   
-  # 2.1 -                           -- eba
-  # 2.2 -                           -- pd
+# 2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  # 2.1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½                         -- eba
+  # 2.2 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½                         -- pd
 
 # 3. NPM
-  # 3.1  -      -- i
-    #    -            -- i <_>
+  # 3.1  - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½    -- i
+    #    - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½          -- i <ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½>
 # 4. YARN
-# 5. 
-# 6.   
+# 5. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+# 6. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 # 7. SSH
-  # 7.1 -   ssh 
-    # 7.1.1 -                         -- key
-    # 7.1.2 -          -- getkey  
-  # 7.2 - SSH 
-    # 7.2.1 -   big                   -- big
-    # 7.2.2 -   dev                   -- dev
-# 8. 
+  # 7.1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ssh ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    # 7.1.1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                       -- key
+    # 7.1.2 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     -- getkey  
+  # 7.2 - SSH ï¿½ï¿½ï¿½ï¿½ï¿½
+    # 7.2.1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ big                   -- big
+    # 7.2.2 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ dev                   -- dev
+# 8. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
-# 0. 
+# 0. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   
-  function Get-WhoMe { Write-Host -ForegroundColor DarkGreen "  ,     !"}
-  Set-Alias '' Get-WhoMe
-
-
-
-    
-
-    
-
-
-
-  
-  
-  
-  
-
- 
-
-  function Get-GitCommitFix { & git commit -m "fix: update"}
+  function Get-WhoMe { Write-Host -ForegroundColor DarkGreen "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½!"}
+  Set-Alias 'ï¿½ï¿½ï¿½ï¿½' Get-WhoMe
 
   function Get-Pull { & git pull }
 
-  # Git -  
+  # Git - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     function Get-Push { Get-GitAdd; & git commit -m 'update'; Get-Gpu; }
-    function Get-Push2{ Get-GitAdd; Get-GitCommitFix; Get-Gpu;}
+    
     function Get-PushUOriginMaster { & git push -u origin master }
 
 
 
-# 2.   
+# 2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
  
 
-  # 2.2 -  
+  # 2.2 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     function Get-PullAliases {set-location "C:/proj/settings";git pull;}
     Set-Alias 'pd' Get-PullAliases
 
-  # 2.3 -  
+  # 2.3 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     function Get-UpdateAliases {set-location "C:/proj/settings";p;}
-    Set-Alias 'ud' Get-UpdateAliases    #  
+    Set-Alias 'ud' Get-UpdateAliases    # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -117,7 +100,7 @@ function Get-Auto { Get-GitAdd; Get-GitCommit; Get-Gpu; Get-SendMaster; }
 function Get-SendDev{ & ssh master 'cd /var/projects/go/www/dev.go.ams74.ru && git pull origin php8.1'}
 function Get-AutoDev{ Get-GitAdd; Get-GitCommit; Get-Gpu; Get-SendDev; }
 
-#   
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -135,16 +118,16 @@ function ssh_copy_id([string]$sshHost)
 
 
 
-# 6.   
+# 6. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
      
 
-  # 6.3 -   
+  # 6.3 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     function Get-La { ls | ft -p name}
     Set-Alias 'la' Get-La
 
-  # 6.4 -     
+  # 6.4 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     Set-Alias 'home' Get-Home
     
@@ -164,38 +147,38 @@ function ssh_copy_id([string]$sshHost)
   
 # 7. SSH
 
-  # 7.1 -   ssh 
+  # 7.1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ssh ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    # 7.1.1 -   
+    # 7.1.1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 
       function Get-ShowKey { cat ~/.ssh/id_rsa.pub }
       Set-Alias 'key' Get-ShowKey
 
-    # 7.1.2 -     
+    # 7.1.2 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
       function Get-Key {$res = cat ~/.ssh/id_rsa.pub;Set-Clipboard $res}
       Set-Alias 'getkey' Get-Key
 
-  # 7.2 - SSH 
+  # 7.2 - SSH ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    # 7.2.1 -   big
+    # 7.2.1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ big
 
       function Get-Big { ssh big }
       Set-Alias 'big' Get-Big
 
-    # 7.2.2 -   dev
+    # 7.2.2 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ dev
 
       function Get-Dev { ssh dev }
       Set-Alias 'dev' Get-Dev
 
-  # SSH 
+  # SSH ï¿½ï¿½ï¿½ï¿½ï¿½
 
     
 
 
 
 
-  # 7.1 -   ssh 
+  # 7.1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ssh ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     
     
@@ -261,7 +244,7 @@ Set-Alias 'gou' Get-StartGoUpdate
 
 
 # go.ams74.ru
-Set-Alias 'a' Get-Auto            #   master
+Set-Alias 'a' Get-Auto            # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ master
 
 
 # dev.go.ams74.ru
