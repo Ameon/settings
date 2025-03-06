@@ -8,11 +8,15 @@ Import-Module ControlSshConfig
 Import-Module CSharp
 Import-Module Docker
 Import-Module DockerCompose
+Import-Module Docs
+Import-Module Edit
 Import-Module Git
 Import-Module GitBranches
+Import-Module Navigation
 Import-Module NPM
 Import-Module Projects
 Import-Module SshAliases
+Import-Module Servers
 Import-Module Settings
 Import-Module Terminal
 Import-Module ControlVirtualBox
