@@ -10,6 +10,7 @@ Import-Module Docker
 Import-Module DockerCompose
 Import-Module Docs
 Import-Module Edit
+Import-Module Folders
 Import-Module Git
 Import-Module GitBranches
 Import-Module Navigation
