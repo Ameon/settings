@@ -23,6 +23,7 @@ Import-Module ControlVirtualBox
 Import-Module PSMenu
 Import-Module Yarn
 
+
 function prompt {
     # Определение цветов и элементов приглашения
     $userColor = "Cyan"
