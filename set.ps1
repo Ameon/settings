@@ -54,5 +54,13 @@ function prompt {
     return "`n> "
 }
 
+# $py = py -c "import sys; print(sys.executable)"
+# $scripts = py -c "import sys, os; print(os.path.join(os.path.dirname(sys.executable),'Scripts'))"
+# "$py`n$scripts"
+# # временно для текущей сессии
+# if (-not (($env:Path -split ';') -contains $scripts)) { $env:Path = "$env:Path;$scripts" }
+# # постоянно для пользователя
+# [Environment]::SetEnvironmentVariable('Path', [Environment]::GetEnvironmentVariable('Path','User') + ';' + $scripts, 'User')
+
 
 
