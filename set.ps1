@@ -1,6 +1,7 @@
 $PSDefaultParameterValues['Out-File:Encoding'] = 'UTF8'
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
+Remove-Item Alias:gl -Force -ErrorAction SilentlyContinue
 Import-Module ControlAliases
 Import-Module ControlFiles
 Import-Module ControlFolders
